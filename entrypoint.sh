@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-begin=$(date --date "'$1'" +%s)
-end=$(date --date "'$2'" +%s)
+begin=$(date --date "$1" +%s)
+end=$(date --date "$2" +%s)
 
 diff_in_seconds=$((${end} - ${begin}))
 
