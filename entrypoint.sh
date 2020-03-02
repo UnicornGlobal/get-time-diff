@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+TZ=UTC
+
 begin=$(date -d${1} +%s)
 
 echo "Begin: ${begin}"
