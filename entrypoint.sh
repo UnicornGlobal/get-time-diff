@@ -15,9 +15,9 @@ diff_in_seconds=$((${end} - ${begin}))
 
 echo "Diff: ${diff_in_seconds}"
 
-hours=($(date -d@"${diff_in_seconds}" -u +%H) + 0)
-minutes=($(date -d@"${diff_in_seconds}" -u +%M) + 0)
-seconds=($(date -d@"${diff_in_seconds}" -u +%s) + 0)
+hours=$(date -d@"${diff_in_seconds}" -u +%H | awk '{print $1 + 0}')
+minutes=$(date -d@"${diff_in_seconds}" -u +%M | awk '{print $1 + 0}')
+seconds=$(date -d@"${diff_in_seconds}" -u +%s | awk '{print $1 + 0}')
 
 string=''
 
@@ -36,6 +36,8 @@ fi
 if [[ ${seconds} -gt 0 ]]; then
   string="${string}${seconds} sec"
 fi
+
+echo "Output: ${string}"
 
 echo ::set-output name=diff::${string}
 
