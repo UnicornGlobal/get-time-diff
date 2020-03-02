@@ -1,10 +1,17 @@
 #!/bin/bash
 set -e
 
-begin=$(date --date "$1" +%s)
-end=$(date --date "$2" +%s)
+begin=$(date --date $1 +%s)
+
+echo "Begin: ${begin}"
+
+end=$(date --date $2 +%s)
+
+echo "End: ${end}"
 
 diff_in_seconds=$((${end} - ${begin}))
+
+echo "Diff: ${diff_in_seconds}"
 
 hours=$($(date -d@"'${diff_in_seconds}'" -u +%H) + 0)
 minutes=$($(date -d@"'${diff_in_seconds}'" -u +%M) + 0)
