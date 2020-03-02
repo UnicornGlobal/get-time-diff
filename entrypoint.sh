@@ -1,11 +1,11 @@
 #!/bin/bash
 set -e
 
-begin=$(date --date $1 +%s)
+begin=$(date -d${1} +%s)
 
 echo "Begin: ${begin}"
 
-end=$(date --date $2 +%s)
+end=$(date -d${2} +%s)
 
 echo "End: ${end}"
 
