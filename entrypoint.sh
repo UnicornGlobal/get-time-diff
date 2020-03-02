@@ -17,7 +17,7 @@ echo "Diff: ${diff_in_seconds}"
 
 hours=$(date -d@"${diff_in_seconds}" -u +%H | awk '{print $1 + 0}')
 minutes=$(date -d@"${diff_in_seconds}" -u +%M | awk '{print $1 + 0}')
-seconds=$(date -d@"${diff_in_seconds}" -u +%s | awk '{print $1 + 0}')
+seconds=$(date -d@"${diff_in_seconds}" -u +%S | awk '{print $1 + 0}')
 
 string=''
 
