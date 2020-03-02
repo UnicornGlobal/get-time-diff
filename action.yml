@@ -1,0 +1,21 @@
+name: 'Get Time Diff'
+description: 'Get the difference between 2 times'
+branding:
+  icon: 'clock'
+  color: 'green'
+inputs:
+  start:
+    description: 'Begin Time'
+    required: true
+  end:
+    description: 'End Time'
+    required: true
+outputs:
+  diff:
+    description: "The difference between 2 times as a humanised string"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.start }}
+    - ${{ inputs.end }}
