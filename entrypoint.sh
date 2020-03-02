@@ -15,9 +15,9 @@ diff_in_seconds=$((${end} - ${begin}))
 
 echo "Diff: ${diff_in_seconds}"
 
-hours=$($(date -d@"${diff_in_seconds}" -u +%H) + 0)
-minutes=$($(date -d@"${diff_in_seconds}" -u +%M) + 0)
-seconds=$($(date -d@"${diff_in_seconds}" -u +%s) + 0)
+hours=($(date -d@"${diff_in_seconds}" -u +%H) + 0)
+minutes=($(date -d@"${diff_in_seconds}" -u +%M) + 0)
+seconds=($(date -d@"${diff_in_seconds}" -u +%s) + 0)
 
 string=''
 
